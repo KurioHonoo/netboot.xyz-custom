@@ -4,7 +4,7 @@
 #
 
 :start
-echo Pick a damn operating system! (╯°□°)╯︵ ┻━┻
+echo Pick a damn operating system!
 sleep 3
 
 :manjaro
