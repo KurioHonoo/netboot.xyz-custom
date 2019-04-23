@@ -22,7 +22,7 @@ item gnome ${manjaro_version} GNOME
 item kde ${manjaro_version} KDE
 item xfce ${manjaro_version} XFCE
 choose --default ${type} flavor || goto manjaro
-echo @{cls}
+echo ${cls}
 goto mirror_cfg
 
 :mirror_cfg
