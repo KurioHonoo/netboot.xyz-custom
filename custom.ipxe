@@ -1,8 +1,11 @@
 #!ipxe
+#
+# netboot.xyz-custom menu
+#
 
-# Manjaro Linux Operating System
-# https://manjaro.org
-
+:start
+echo Hello idiot!
+sleep 5
 goto ${menu}
 
 :manjaro
@@ -19,12 +22,12 @@ item gnome ${manjaro_version} GNOME
 item kde ${manjaro_version} KDE
 item xfce ${manjaro_version} XFCE
 choose --default ${type} flavor || goto manjaro
-echo ${cls}
+echo @{cls}
 goto mirror_cfg
 
 :mirror_cfg
 set flavor_root ${flavor}
-iseq ${flavor} architect && set ${manjaro_version} 18.0.2 ||
+iseq ${flavor} && set ${manjaro_version} ||
 set manjaro_initrd http://ftp.acc.umu.se//mirror/osdn.net/storage/g/m/ma/manjaro/${flavor_root}/${manjaro_version}/manjaro-${flavor}-${manjaro_version}-stable-x86_64.iso
 goto manjaro_boot
 
@@ -35,5 +38,5 @@ boot
 goto manjaro_exit
 
 :manjaro_exit
-clear menu
+clean menu
 exit 0
