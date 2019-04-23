@@ -38,5 +38,5 @@ boot
 goto manjaro_exit
 
 :manjaro_exit
-clean menu
+clear menu
 exit 0
