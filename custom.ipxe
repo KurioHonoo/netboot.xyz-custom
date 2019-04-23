@@ -31,6 +31,7 @@ set manjaro_initrd http://ftp.acc.umu.se//mirror/osdn.net/storage/g/m/ma/manjaro
 goto manjaro_boot
 
 :manjaro_boot
+imgfree
 kernel ${memdisk} raw iso
 initrd ${manjaro_initrd}
 boot
