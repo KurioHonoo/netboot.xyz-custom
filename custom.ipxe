@@ -6,7 +6,6 @@
 :start
 echo Hello idiot!
 sleep 5
-goto ${menu}
 
 :manjaro
 set os Manjaro Linux
