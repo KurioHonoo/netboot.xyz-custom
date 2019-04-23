@@ -27,7 +27,7 @@ goto mirror_cfg
 :mirror_cfg
 set flavor_root ${flavor}
 iseq ${flavor} && set ${manjaro_version} ||
-set manjaro_initrd https://osdn.net/projects/manjaro/storage/${flavor_root}/${manjaro_version}/manjaro-${flavor}-${manjaro_version}-stable-x86_64.iso
+set manjaro_initrd https://ftp//osdn.net/projects/manjaro/storage/${flavor_root}/${manjaro_version}/manjaro-${flavor}-${manjaro_version}-stable-x86_64.iso
 goto manjaro_boot
 
 :manjaro_boot
