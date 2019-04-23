@@ -4,7 +4,7 @@
 #
 
 :start
-echo Hello idiot!
+echo Pick a damn operating system! (╯°□°)╯︵ ┻━┻
 sleep 3
 
 :manjaro
@@ -37,5 +37,5 @@ boot
 goto manjaro_exit
 
 :manjaro_exit
-clear menu
+chain utils.ipxe
 exit 0
