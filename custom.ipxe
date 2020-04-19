@@ -1,12 +1,11 @@
 #!ipxe
-#
+# Custom Ubuntu for Braxton
 # netboot.xyz-custom menu
 #
 
 :start
 echo Pick a damn operating system!
 sleep 1
-goto ${menu}
 
 :ubuntu
 set os Ubuntu Linux
