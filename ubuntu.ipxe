@@ -1,0 +1,41 @@
+#!ipxe
+
+# Ubuntu
+# 
+
+:start
+echo Pick a damn operating system!
+sleep 1
+goto ${menu}
+
+:ubuntu
+set os Ubuntu Linux
+menu ${os} Installers
+item --gap Official Releases
+item 20.04 LTS Daily ${space} ${os} 20.04 LTS Daily
+choose ubuntu_version || goto ubuntu_exit
+
+:ubuntu_flavor
+menu ${os} ${ubuntu_version} Installers
+item --gap Flavors
+item gnome ${ubuntu_version} GNOME
+choose --default ${type} flavor || goto ubuntu
+echo ${cls}
+goto mirror_cfg
+
+:mirror_cfg
+set flavor_root ${flavor}
+iseq ${flavor} && set ${ubuntu_version} ||
+set ubuntu_initrd http://cdimage.ubuntu.com/ubuntu-server/daily/current/focal-legacy-server-amd64.iso
+goto ubuntu_boot
+
+:ubuntu_boot
+imgfree
+kernel ${memdisk} raw iso
+initrd ${ubuntu_initrd}
+boot
+goto ubuntu_exit
+
+:ubuntu_exit
+chain utils.ipxe
+exit 0
