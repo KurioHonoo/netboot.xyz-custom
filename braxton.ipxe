@@ -6,6 +6,7 @@
 :start
 echo Pick a damn operating system!
 sleep 1
+goto ${menu}
 
 :ubuntu
 set os Ubuntu Linux
